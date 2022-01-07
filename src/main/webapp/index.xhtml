@@ -1,14 +1,32 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
 >
 <h:head>
-	<title>Demo</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <title>Demo</title>
+    <link href=" https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+          crossorigin="anonymous"/>
 </h:head>
-<h:body styleClass="container">
-	<h4>This is a demo page</h4>
-	<div class="card">
-		<h:link outcome="list.xhtml">Click me a few times quickly</h:link>
-	</div>
+<h:body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"/>
+    <div class="container-sm">
+        <p>This is a simple demo application showing the issues with
+            <code>execute="@this" with composite components used as layout</code></p>
+
+        <ul>
+            <li>
+                <h:link outcome="composite.xhtml"
+                        target="_blank">View the demo using a composite component</h:link> (This one fails)
+            </li>
+            <li>
+                <h:link outcome="standard.xhtml"
+                        target="_blank">View the demo using a just standard layout</h:link> (This one works)
+            </li>
+        </ul>
+    </div>
 </h:body>
 </html>

@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+    <cc:interface>
+        <cc:attribute name="header" required="true"/>
+    </cc:interface>
+    <cc:implementation>
+        <div class="card">
+            <div class="card-header">
+                #{cc.attrs.header}
+            </div>
+            <div class="card-body">
+                <cc:insertChildren/>
+            </div>
+        </div>
+    </cc:implementation>
+</ui:composition>

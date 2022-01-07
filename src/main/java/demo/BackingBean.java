@@ -1,39 +1,46 @@
 package demo;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 import java.util.logging.Logger;
 
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 @ViewScoped
 @Named
 public class BackingBean implements Serializable {
 
-    private static final Logger log = Logger.getLogger("BackingBean");
+  private static final Logger log = Logger.getLogger("BackingBean");
 
-    private List<String> randomStrings = new ArrayList<>();
+  private String firstName = "Joe";
+  private String job;
+  private String startDate;
 
-    @Inject
-    private void init() {
-        log.info("Starting Request");
-        try {
-            //Slow the load down a bit
-            for (int i = 0; i < 1000; i++) {
-                randomStrings.add(UUID.randomUUID().toString());
-            }
-            Thread.sleep(3000);
-        }
-        catch (InterruptedException e) {
-            log.info("Interruption Sleeping");
-        }
-    }
+  public String getFirstName() {
+    return firstName;
+  }
 
-    public List<String> getRandomStrings() {
-        return randomStrings;
-    }
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
+
+  public String getJob() {
+    return job;
+  }
+
+  public void setJob(String job) {
+    this.job = job;
+  }
+
+  public String getStartDate() {
+    return startDate;
+  }
+
+  public void setStartDate(String startDate) {
+    this.startDate = startDate;
+  }
+
+  public void doIt() {
+    log.info(String.format("First Name %s, Job %s, Start Date %s", firstName, job, startDate));
+  }
 }
